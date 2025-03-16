@@ -11,7 +11,7 @@ export const ChatbotUISVG: FC<ChatbotUISVGProps> = ({ theme, scale = 1 }) => {
       width={122.88 * scale}
       height={120.85 * scale}
       viewBox="0 0 122.88 120.85"
-      style={{ enableBackground: "new 0 0 122.88 120.85" }}
+      enableBackground="new 0 0 122.88 120.85"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g>
