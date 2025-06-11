@@ -72,19 +72,13 @@ export default async function Login({
       .eq("is_home", true)
       .single()
 
-    const { data: homeChat, error: homeChatError } = await supabase
-      .from("chats")
-      .select("*")
-      .eq("workspace_id", homeWorkspace?.id)
-      .single()
-
     if (!homeWorkspace) {
       throw new Error(
         homeWorkspaceError?.message || "An unexpected error occurred"
       )
     }
 
-    return redirect(`/${homeWorkspace.id}/chat/${homeChat?.id || ""}`)
+    return redirect(`/${homeWorkspace.id}/chat`)
   }
 
   const getEnvVarOrEdgeConfigValue = async (name: string) => {
