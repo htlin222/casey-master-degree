@@ -212,7 +212,17 @@ export const ChatInput: FC<ChatInputProps> = ({}) => {
       </div>
 
       <div className="border-input relative mt-3 flex min-h-[60px] w-full items-center justify-center rounded-xl border-2">
+        <div className="absolute bottom-[76px] left-0 max-h-[300px] w-full overflow-auto rounded-xl dark:border-none">
+          <ChatCommandInput />
+        </div>
+
         <>
+          <IconCirclePlus
+            className="absolute bottom-[12px] left-3 cursor-pointer p-1 hover:opacity-50"
+            size={32}
+            onClick={() => fileInputRef.current?.click()}
+          />
+
           {/* Hidden input to select files from device */}
           <Input
             ref={fileInputRef}
